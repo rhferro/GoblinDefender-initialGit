@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://boy1t7ugn6k50"]
+
+[ext_resource type="PackedScene" uid="uid://cvlrfc2hr1ns4" path="res://objects/Enemy/Builds/Red fortness/Castle Red Spawner.tscn" id="1_h47i0"]
+[ext_resource type="PackedScene" uid="uid://bodctekr47m03" path="res://objects/Player/player.tscn" id="2_h3hmq"]
+
+[node name="MobSpawner" type="Node2D"]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_h3hmq")]
+position = Vector2(941, 429)
+
+[node name="CastleRedSpawner" parent="." instance=ExtResource("1_h47i0")]
+position = Vector2(346, 280)

@@ -1,0 +1,235 @@
+[gd_scene load_steps=16 format=3 uid="uid://dmqc1d4kqcxpi"]
+
+[ext_resource type="Texture2D" uid="uid://nuu4hyafmtmc" path="res://addons/Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Red/Warrior_Red.png" id="1_kal0u"]
+[ext_resource type="Script" path="res://objects/Enemy/Old Enemy/EnemyClass.gd" id="1_mba6c"]
+[ext_resource type="PackedScene" uid="uid://bw8a8qi6k3ky0" path="res://objects/miscellaneous/death.tscn" id="2_wbkqk"]
+[ext_resource type="Script" path="res://objects/Enemy/Old Enemy/enemy-follow-player.gd" id="4_6ycrt"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l6xn1"]
+radius = 13.7261
+height = 29.39
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bxhxa"]
+radius = 19.0
+
+[sub_resource type="Animation" id="Animation_eaqsr"]
+length = 0.001
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_7xpg8"]
+resource_name = "enemy-attack-down"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [24, 25, 26, 27, 28, 29]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../FollowPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.6),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"attack_player"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_fgdtq"]
+resource_name = "enemy-attack-side"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.7, 0.7001, 0.7002, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [12, 13, 14, 15, 15, 15, 16, 17]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../FollowPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.7),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"attack_player"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_srpgq"]
+resource_name = "enemy-attack-up"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [36, 37, 38, 39, 40, 41]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../FollowPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.6),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [null],
+"method": &"attack_player"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_670oq"]
+resource_name = "enemy-idle"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_k1fsv"]
+resource_name = "enemy-run"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [6, 7, 8, 9, 10, 11]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n3apq"]
+_data = {
+"RESET": SubResource("Animation_eaqsr"),
+"enemy-attack-down": SubResource("Animation_7xpg8"),
+"enemy-attack-side": SubResource("Animation_fgdtq"),
+"enemy-attack-up": SubResource("Animation_srpgq"),
+"enemy-idle": SubResource("Animation_670oq"),
+"enemy-run": SubResource("Animation_k1fsv")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ekhbg"]
+bg_color = Color(0.160784, 0.160784, 0.160784, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kvwie"]
+bg_color = Color(0.847059, 0.160784, 0.160784, 1)
+
+[node name="Enemy" type="CharacterBody2D" groups=["enemies"]]
+z_index = 1
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_mba6c")
+death_object_scene = ExtResource("2_wbkqk")
+
+[node name="EnemyAttackArea" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyAttackArea"]
+y_sort_enabled = true
+position = Vector2(-4, -33)
+rotation = 1.5708
+scale = Vector2(6.19259, 6.19259)
+shape = SubResource("CapsuleShape2D_l6xn1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -13)
+shape = SubResource("CircleShape2D_bxhxa")
+debug_color = Color(1.34766e-06, 0.634162, 0.739377, 0.42)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sprite2D")
+libraries = {
+"": SubResource("AnimationLibrary_n3apq")
+}
+autoplay = "enemy-run"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-3, -34)
+texture = ExtResource("1_kal0u")
+flip_h = true
+hframes = 6
+vframes = 8
+
+[node name="FollowPlayer" type="Node" parent="."]
+script = ExtResource("4_6ycrt")
+
+[node name="Timer" type="Timer" parent="FollowPlayer"]
+
+[node name="EnemyBar" type="ProgressBar" parent="."]
+offset_left = -41.0
+offset_right = 41.0
+offset_bottom = 9.0
+theme_override_styles/background = SubResource("StyleBoxFlat_ekhbg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_kvwie")
+rounded = true
+show_percentage = false
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+avoidance_enabled = true
+avoidance_layers = 6
+avoidance_mask = 6
+
+[connection signal="timeout" from="FollowPlayer/Timer" to="FollowPlayer" method="_on_timer_timeout"]

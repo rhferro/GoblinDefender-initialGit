@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dysuxi0tkmy1u"]
+
+[ext_resource type="Texture2D" uid="uid://cxt4qbqp5ir4h" path="res://addons/Tiny Swords (Update 010)/Factions/Knights/Buildings/Castle/Castle_Destroyed.png" id="1_mo8sx"]
+
+[node name="CastleDestroyed" type="Sprite2D"]
+position = Vector2(14, -8)
+texture = ExtResource("1_mo8sx")

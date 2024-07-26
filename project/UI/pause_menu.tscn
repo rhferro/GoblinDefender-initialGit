@@ -1,0 +1,76 @@
+[gd_scene load_steps=9 format=3 uid="uid://dgemrl8ds8nc1"]
+
+[ext_resource type="Script" path="res://UI/pause_menu.gd" id="1_meyka"]
+[ext_resource type="FontFile" uid="uid://dv56a3yim1nvr" path="res://UI/fonts/Cardinal-Alternate.ttf" id="1_vhoxu"]
+
+[sub_resource type="Theme" id="Theme_s72c2"]
+Button/font_sizes/font_size = 35
+Button/fonts/font = ExtResource("1_vhoxu")
+
+[sub_resource type="InputEventAction" id="InputEventAction_g27aq"]
+action = &"ui_cancel"
+
+[sub_resource type="Shortcut" id="Shortcut_ni0y0"]
+events = [SubResource("InputEventAction_g27aq")]
+
+[sub_resource type="Theme" id="Theme_26dxg"]
+Button/font_sizes/font_size = 35
+Button/fonts/font = ExtResource("1_vhoxu")
+
+[sub_resource type="FontVariation" id="FontVariation_80sxd"]
+base_font = ExtResource("1_vhoxu")
+
+[sub_resource type="LabelSettings" id="LabelSettings_ekso2"]
+font = SubResource("FontVariation_80sxd")
+font_size = 85
+
+[node name="PauseMenu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_meyka")
+
+[node name="BGOverlayer" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.345098)
+
+[node name="MenuHolder" type="VBoxContainer" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -33.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Resume" type="Button" parent="MenuHolder"]
+layout_mode = 2
+theme = SubResource("Theme_s72c2")
+shortcut = SubResource("Shortcut_ni0y0")
+text = "Resume
+"
+
+[node name="QuitGame" type="Button" parent="MenuHolder"]
+layout_mode = 2
+theme = SubResource("Theme_26dxg")
+text = "Quit Game
+"
+
+[node name="Pause" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -102.5
+offset_top = 44.0
+offset_right = 102.5
+offset_bottom = 110.0
+grow_horizontal = 2
+text = "PAUSE
+"
+label_settings = SubResource("LabelSettings_ekso2")
+
+[connection signal="pressed" from="MenuHolder/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="MenuHolder/QuitGame" to="." method="_on_quit_game_pressed"]

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0xdkvlwyx4i4"]
+
+[ext_resource type="PackedScene" uid="uid://dq4coyqpf7wgg" path="res://objects/miscellaneous/Resources/Gold/gold.tscn" id="1_npkb6"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="gold" parent="." instance=ExtResource("1_npkb6")]

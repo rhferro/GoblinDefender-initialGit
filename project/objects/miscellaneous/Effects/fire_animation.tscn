@@ -1,0 +1,66 @@
+[gd_scene load_steps=10 format=3 uid="uid://f7ygtgu1fvb3"]
+
+[ext_resource type="Texture2D" uid="uid://dbognavh031pb" path="res://addons/Tiny Swords (Update 010)/Effects/Fire/Fire.png" id="1_omibn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qicli"]
+atlas = ExtResource("1_omibn")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3rs6y"]
+atlas = ExtResource("1_omibn")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_swylv"]
+atlas = ExtResource("1_omibn")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sixg2"]
+atlas = ExtResource("1_omibn")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uosox"]
+atlas = ExtResource("1_omibn")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u70v7"]
+atlas = ExtResource("1_omibn")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26k8p"]
+atlas = ExtResource("1_omibn")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mrwqu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qicli")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3rs6y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_swylv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sixg2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uosox")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u70v7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_26k8p")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 10.0
+}]
+
+[node name="FireAnimation" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_mrwqu")
+animation = &"new_animation"
+autoplay = "new_animation"
+frame_progress = 0.552932

@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://b051jrxd0p7k5"]
+
+[ext_resource type="Script" path="res://objects/miscellaneous/MobSpawnner/mobSpawnnerAroundPlayer.gd" id="1_ncfdn"]
+[ext_resource type="PackedScene" uid="uid://dl02ua751e8ci" path="res://objects/Enemy/Red_knight.tscn" id="2_6e8a6"]
+[ext_resource type="Script" path="res://objects/miscellaneous/MobSpawnner/difficult_system.gd" id="2_oum3w"]
+[ext_resource type="PackedScene" uid="uid://cs2lvqsa530x2" path="res://objects/Enemy/Red_Archer.tscn" id="3_af346"]
+
+[sub_resource type="Curve2D" id="Curve2D_88472"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 2096.4, -988.971, 0, 0, 0, 0, 2412.58, 310.171, 0, 0, 0, 0, 2175.45, 1519.52, 0, 0, 0, 0, -1722, 1589, 0, 0, 0, 0, -2029.58, 292.021, 0, 0, 0, 0, -1663.47, -1034.82, 0, 0, 0, 0, 2096.4, -980.373)
+}
+point_count = 7
+
+[node name="MobSpawnnerAroundPlayer" type="Node2D"]
+script = ExtResource("1_ncfdn")
+creatures = Array[PackedScene]([ExtResource("2_6e8a6"), ExtResource("3_af346")])
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(80.377, -75.7012)
+scale = Vector2(0.961468, 1.04684)
+curve = SubResource("Curve2D_88472")
+
+[node name="AroundPlayer" type="PathFollow2D" parent="Path2D"]
+unique_name_in_owner = true
+position = Vector2(2096.4, -988.971)
+rotation = 1.33206
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("2_oum3w")

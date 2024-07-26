@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://ct12n3v1oswnb"]
+
+[ext_resource type="PackedScene" uid="uid://bodctekr47m03" path="res://objects/Player/player.tscn" id="1_oua03"]
+[ext_resource type="PackedScene" uid="uid://dmqc1d4kqcxpi" path="res://objects/Enemy/Old Enemy/warrior-red-enemy.tscn" id="2_43e5q"]
+[ext_resource type="PackedScene" uid="uid://doeciooc75h84" path="res://objects/Player/with_sword/torch_sword_finalized.tscn" id="3_813bk"]
+
+[node name="TestFollow" type="Node2D"]
+
+[node name="CharacterBody2D2" parent="." instance=ExtResource("1_oua03")]
+position = Vector2(554, 396)
+
+[node name="CharacterBody2D4" parent="." instance=ExtResource("2_43e5q")]
+position = Vector2(609, 493)
+
+[node name="TorchSwordFinalized" parent="." instance=ExtResource("3_813bk")]

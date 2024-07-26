@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhniragmcugu1"]
+
+[ext_resource type="Script" path="res://scripts/EnemiesScript/Structure_enemy_class_test.gd" id="1_q25xy"]
+[ext_resource type="Texture2D" uid="uid://blm5othquungl" path="res://addons/Tiny Swords (Update 010)/Factions/Knights/Buildings/Castle/Castle_Purple.png" id="1_tmk8x"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kqjef"]
+radius = 44.9946
+height = 270.0
+
+[sub_resource type="Curve2D" id="Curve2D_q6c6l"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -205, 50, 0, 0, 0, 0, -142, -28, 0, 0, 0, 0, -2, -32, 0, 0, 0, 0, 133, -36, 0, 0, 0, 0, 194, 56, 0, 0, 0, 0, 133, 160, 0, 0, 0, 0, -130, 156, 0, 0, 0, 0, -205, 51)
+}
+point_count = 8
+
+[node name="Node2D" type="StaticBody2D"]
+position = Vector2(-1, -101)
+script = ExtResource("1_q25xy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_tmk8x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, 67)
+rotation = 1.57257
+scale = Vector2(1, 1)
+shape = SubResource("CapsuleShape2D_kqjef")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Path2D" type="Path2D" parent="Node2D"]
+position = Vector2(1.45866, 15.1633)
+scale = Vector2(0.992481, 0.69898)
+curve = SubResource("Curve2D_q6c6l")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Node2D/Path2D"]
+unique_name_in_owner = true
+position = Vector2(-205, 50)
+rotation = -0.891382

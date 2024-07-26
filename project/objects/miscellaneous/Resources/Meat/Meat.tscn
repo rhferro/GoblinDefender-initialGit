@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=3 uid="uid://cuqtp12vhwlif"]
+
+[ext_resource type="Texture2D" uid="uid://df3osxo3mj4kn" path="res://addons/Tiny Swords (Update 010)/Resources/Resources/M_Spawn.png" id="1_qalfv"]
+[ext_resource type="Script" path="res://objects/miscellaneous/Resources/Meat/Meat.gd" id="2_y3i52"]
+
+[sub_resource type="Animation" id="Animation_xmcv5"]
+resource_name = "Meat"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+
+[sub_resource type="Animation" id="Animation_jrw8g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ixq0m"]
+_data = {
+"Meat": SubResource("Animation_xmcv5"),
+"RESET": SubResource("Animation_jrw8g")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sabiq"]
+radius = 30.0666
+
+[node name="Meat" type="Sprite2D"]
+position = Vector2(1, -58)
+texture = ExtResource("1_qalfv")
+hframes = 7
+script = ExtResource("2_y3i52")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ixq0m")
+}
+autoplay = "Meat"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, 7)
+shape = SubResource("CircleShape2D_sabiq")

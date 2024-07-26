@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://kkrdwiw6217h"]
+
+[ext_resource type="Script" path="res://scripts/Arrow/Arrow.gd" id="1_x6ib2"]
+[ext_resource type="Texture2D" uid="uid://ul663f7g1s7c" path="res://addons/Tiny Swords (Update 010)/Factions/Knights/Troops/Archer/Arrow/Arrow.png" id="2_xdetu"]
+[ext_resource type="Texture2D" uid="uid://dm2wtyiiner3a" path="res://addons/Tiny Swords (Update 010)/Factions/Knights/Troops/Archer/Arrow/Arrow on the ground.png" id="3_cyfyy"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cnyju"]
+radius = 4.47197
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g0fjd"]
+radius = 2.0
+height = 56.0
+
+[node name="Arrow" type="Area2D"]
+script = ExtResource("1_x6ib2")
+
+[node name="Arrow" type="Sprite2D" parent="."]
+position = Vector2(0, -3)
+texture = ExtResource("2_xdetu")
+vframes = 2
+
+[node name="ArrowDamage" type="Area2D" parent="."]
+position = Vector2(22, 4.9738e-14)
+rotation = -1.57079
+scale = Vector2(1.82169, -0.592426)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArrowDamage"]
+position = Vector2(8.09425e-06, -5.85452)
+shape = SubResource("CapsuleShape2D_cnyju")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_g0fjd")
+
+[node name="ArrowOnTheGround" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(2, 3)
+scale = Vector2(0.760001, 0.760001)
+texture = ExtResource("3_cyfyy")
+
+[node name="ArrowOnBody" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-19, -3)
+texture = ExtResource("2_xdetu")
+vframes = 2
+frame = 1

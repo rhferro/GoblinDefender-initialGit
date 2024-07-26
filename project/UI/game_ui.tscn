@@ -1,0 +1,371 @@
+[gd_scene load_steps=37 format=3 uid="uid://bgo4chxsppmqh"]
+
+[ext_resource type="Script" path="res://Sceens_test/GameUI.gd" id="1_wnlef"]
+[ext_resource type="Texture2D" uid="uid://byvfloy7bqf8e" path="res://addons/Tiny Swords (Update 010)/UI/Banners/Banner_Horizontal.png" id="2_3fy6c"]
+[ext_resource type="Texture2D" uid="uid://c1kme6wvwa2pq" path="res://addons/Tiny Swords (Update 010)/Resources/Resources/G_Idle_(NoShadow).png" id="3_ik16k"]
+[ext_resource type="Texture2D" uid="uid://hajovv20dhje" path="res://addons/Tiny Swords (Update 010)/UI/Buttons/Button_Blue_9Slides_Pressed.png" id="4_bd1a5"]
+[ext_resource type="Texture2D" uid="uid://7m8k11bt8ohd" path="res://addons/Tiny Swords (Update 010)/UI/Buttons/Button_Hover.png" id="5_qomah"]
+[ext_resource type="Texture2D" uid="uid://djdbnpv67eqq6" path="res://addons/Tiny Swords (Update 010)/UI/Icons/Regular_08.png" id="6_p3q27"]
+[ext_resource type="Texture2D" uid="uid://ct4i64m4vsyqt" path="res://addons/Tiny Swords (Update 010)/UI/buttons_Control/movement/down_btn.png" id="7_akgtf"]
+[ext_resource type="Texture2D" uid="uid://c2imodgat6h81" path="res://addons/Tiny Swords (Update 010)/UI/buttons_Control/movement/down_btn_pressed.png" id="8_b7k3q"]
+[ext_resource type="Texture2D" uid="uid://c53xtr60fe8k3" path="res://addons/Tiny Swords (Update 010)/UI/buttons_Control/movement/left_btn.png" id="9_tg84d"]
+[ext_resource type="Texture2D" uid="uid://cg7jullm47hws" path="res://addons/Tiny Swords (Update 010)/UI/buttons_Control/movement/left_btn_pressed.png" id="10_mvxoa"]
+[ext_resource type="Texture2D" uid="uid://cqs6d2wmadps0" path="res://addons/Tiny Swords (Update 010)/UI/buttons_Control/movement/up_btn.png" id="11_ekvi6"]
+[ext_resource type="Texture2D" uid="uid://b8u415481pkdq" path="res://addons/Tiny Swords (Update 010)/UI/buttons_Control/movement/up_btn_pressed.png" id="12_wplg3"]
+[ext_resource type="Texture2D" uid="uid://dwo2myin2divs" path="res://addons/Tiny Swords (Update 010)/UI/buttons_Control/movement/right_btn.png" id="13_6ryfc"]
+[ext_resource type="Texture2D" uid="uid://c86dotbj5gu7n" path="res://addons/Tiny Swords (Update 010)/UI/buttons_Control/movement/right_btn_pressed.png" id="14_8s1nn"]
+[ext_resource type="Texture2D" uid="uid://bi2itx42if8ad" path="res://addons/Tiny Swords (Update 010)/UI/buttons_Control/attack-btn.png" id="15_p35v2"]
+[ext_resource type="Texture2D" uid="uid://bghknktofus45" path="res://addons/Tiny Swords (Update 010)/UI/buttons_Control/attack_btn_pressed.png" id="16_hvj3m"]
+[ext_resource type="Texture2D" uid="uid://ctprlhki8uor" path="res://addons/Tiny Swords (Update 010)/UI/buttons_Control/dash-btn.png" id="17_r0nkm"]
+[ext_resource type="Texture2D" uid="uid://x5dph7oymltp" path="res://addons/Tiny Swords (Update 010)/UI/buttons_Control/dash_btn_pressed.png" id="18_jwq7l"]
+[ext_resource type="Texture2D" uid="uid://ddy4o137lk46a" path="res://addons/Tiny Swords (Update 010)/UI/buttons_Control/magic_btn.png" id="19_854ra"]
+[ext_resource type="Texture2D" uid="uid://d22aprh35mlnj" path="res://addons/Tiny Swords (Update 010)/UI/buttons_Control/magic_btn_pressed.png" id="20_2unla"]
+[ext_resource type="PackedScene" uid="uid://dgemrl8ds8nc1" path="res://UI/pause_menu.tscn" id="21_hn6ny"]
+[ext_resource type="Texture2D" uid="uid://djj43jd5sfych" path="res://addons/Tiny Swords (Update 010)/UI/buttons_Control/pause1.png" id="22_cbcgj"]
+[ext_resource type="Texture2D" uid="uid://b1rywjh0fdimn" path="res://addons/Tiny Swords (Update 010)/UI/buttons_Control/pause_pressed.png" id="23_x7nog"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uoa5i"]
+atlas = ExtResource("5_qomah")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vld21"]
+atlas = ExtResource("6_p3q27")
+region = Rect2(16, 8, 32, 40)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jffw7"]
+texture = ExtResource("4_bd1a5")
+texture_margin_left = 24.0
+texture_margin_top = 24.0
+texture_margin_right = 24.0
+texture_margin_bottom = 32.0
+axis_stretch_horizontal = 2
+region_rect = Rect2(0, 0, 192, 192)
+
+[sub_resource type="SystemFont" id="SystemFont_mk0e6"]
+font_names = PackedStringArray("Impact")
+font_weight = 375
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_ipg1x"]
+font = SubResource("SystemFont_mk0e6")
+font_size = 33
+font_color = Color(0.0859838, 0.0859838, 0.0859838, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_l48l3"]
+font_names = PackedStringArray("Impact")
+font_weight = 350
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_ayt6w"]
+font = SubResource("SystemFont_l48l3")
+font_size = 21
+font_color = Color(0.0859838, 0.0859838, 0.0859838, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jp8l6"]
+bg_color = Color(0.15967, 0.15967, 0.15967, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xyrnf"]
+bg_color = Color(0.847059, 0.160784, 0.160784, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h113g"]
+bg_color = Color(0.15967, 0.15967, 0.15967, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vt14u"]
+bg_color = Color(0.0745098, 0.560784, 0.972549, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_731p5"]
+texture = ExtResource("2_3fy6c")
+texture_margin_left = 32.0
+texture_margin_top = 16.0
+texture_margin_right = 32.0
+texture_margin_bottom = 40.0
+axis_stretch_horizontal = 2
+region_rect = Rect2(32, 48, 128, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2gpg"]
+atlas = ExtResource("3_ik16k")
+region = Rect2(40, 40, 56, 56)
+
+[node name="GameUI" type="CanvasLayer"]
+script = ExtResource("1_wnlef")
+
+[node name="Upgrade2" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.00784314)
+offset_left = 24.0
+offset_top = 205.0
+offset_right = 123.0
+offset_bottom = 298.0
+texture = SubResource("AtlasTexture_uoa5i")
+
+[node name="TextureRect" type="TextureRect" parent="Upgrade2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.425
+anchor_right = 0.5
+anchor_bottom = 0.425
+offset_left = -20.5
+offset_top = -23.525
+offset_right = 20.5
+offset_bottom = 23.475
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_vld21")
+
+[node name="PlayerInfo" type="Panel" parent="."]
+offset_left = 26.0
+offset_top = 26.0
+offset_right = 319.0
+offset_bottom = 191.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_jffw7")
+
+[node name="Name" type="Label" parent="PlayerInfo"]
+layout_mode = 1
+offset_left = 27.0
+offset_top = 25.0
+offset_right = 134.0
+offset_bottom = 71.0
+text = "Gorn"
+label_settings = SubResource("LabelSettings_ipg1x")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelLabel" type="Label" parent="PlayerInfo"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 175.0
+offset_top = -46.5
+offset_right = 236.0
+offset_bottom = -19.5
+grow_vertical = 2
+text = "Level: "
+label_settings = SubResource("LabelSettings_ayt6w")
+
+[node name="Level" type="Label" parent="PlayerInfo"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 230.0
+offset_top = -46.5
+offset_right = 291.0
+offset_bottom = -19.5
+grow_vertical = 2
+text = "1"
+label_settings = SubResource("LabelSettings_ayt6w")
+
+[node name="HP" type="Label" parent="PlayerInfo"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 49.0
+offset_top = -90.0
+offset_right = 110.0
+offset_bottom = -63.0
+grow_vertical = 0
+text = "HP:"
+label_settings = SubResource("LabelSettings_ayt6w")
+
+[node name="UIHPBar" type="ProgressBar" parent="PlayerInfo/HP"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 40.0
+offset_top = 1.0
+offset_right = 220.0
+offset_bottom = 28.0
+theme_override_styles/background = SubResource("StyleBoxFlat_jp8l6")
+theme_override_styles/fill = SubResource("StyleBoxFlat_xyrnf")
+value = 91.0
+rounded = true
+show_percentage = false
+
+[node name="UIHPValue" type="Label" parent="PlayerInfo/HP/UIHPBar"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "95/100"
+
+[node name="MP" type="Label" parent="PlayerInfo"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 46.0
+offset_top = -57.0
+offset_right = 107.0
+offset_bottom = -30.0
+grow_vertical = 0
+text = "MP:"
+label_settings = SubResource("LabelSettings_ayt6w")
+
+[node name="UIMPBar" type="ProgressBar" parent="PlayerInfo/MP"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 43.0
+offset_top = 1.0
+offset_right = 222.0
+offset_bottom = 28.0
+theme_override_styles/background = SubResource("StyleBoxFlat_h113g")
+theme_override_styles/fill = SubResource("StyleBoxFlat_vt14u")
+value = 91.0
+rounded = true
+show_percentage = false
+
+[node name="UIMPValue" type="Label" parent="PlayerInfo/MP/UIMPBar"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "45/50
+"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Resources" type="Panel" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -259.0
+offset_top = 21.0
+offset_right = -20.0
+offset_bottom = 144.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_731p5")
+
+[node name="GoldLabel" type="Label" parent="Resources"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -130.0
+offset_top = 23.0
+offset_right = -22.0
+offset_bottom = 84.0
+grow_horizontal = 0
+text = "9999999"
+label_settings = SubResource("LabelSettings_ipg1x")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GoldSymbol" type="Label" parent="Resources"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -178.0
+offset_top = 22.0
+offset_right = -138.0
+offset_bottom = 83.0
+grow_horizontal = 0
+text = "$"
+label_settings = SubResource("LabelSettings_ipg1x")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GoldRect" type="TextureRect" parent="Resources"]
+layout_mode = 1
+offset_left = 18.0
+offset_top = 22.0
+offset_right = 74.0
+offset_bottom = 78.0
+texture = SubResource("AtlasTexture_f2gpg")
+
+[node name="Controls" type="CanvasLayer" parent="."]
+
+[node name="UiDown" type="TouchScreenButton" parent="Controls"]
+position = Vector2(185, 516)
+texture_normal = ExtResource("7_akgtf")
+texture_pressed = ExtResource("8_b7k3q")
+action = "move_down"
+visibility_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="UiLeft" type="TouchScreenButton" parent="Controls"]
+position = Vector2(126, 493)
+texture_normal = ExtResource("9_tg84d")
+texture_pressed = ExtResource("10_mvxoa")
+action = "move_left"
+visibility_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="UiUp" type="TouchScreenButton" parent="Controls"]
+position = Vector2(185, 436)
+texture_normal = ExtResource("11_ekvi6")
+texture_pressed = ExtResource("12_wplg3")
+action = "move_up"
+visibility_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="UiRight" type="TouchScreenButton" parent="Controls"]
+position = Vector2(210, 493)
+texture_normal = ExtResource("13_6ryfc")
+texture_pressed = ExtResource("14_8s1nn")
+action = "move_right"
+visibility_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Attack" type="TouchScreenButton" parent="Controls"]
+position = Vector2(848, 439)
+scale = Vector2(2.34375, 2.34375)
+texture_normal = ExtResource("15_p35v2")
+texture_pressed = ExtResource("16_hvj3m")
+action = "attack"
+visibility_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Dash" type="TouchScreenButton" parent="Controls"]
+position = Vector2(971, 344)
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("17_r0nkm")
+texture_pressed = ExtResource("18_jwq7l")
+action = "dash"
+visibility_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="magic" type="TouchScreenButton" parent="Controls"]
+visible = false
+position = Vector2(974, 213)
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("19_854ra")
+texture_pressed = ExtResource("20_2unla")
+action = "magic"
+visibility_mode = 1
+
+[node name="PauseMenu" parent="." instance=ExtResource("21_hn6ny")]
+visible = false
+
+[node name="Dash2" type="TouchScreenButton" parent="."]
+position = Vector2(560, 26)
+scale = Vector2(1.20685, 1.20685)
+texture_normal = ExtResource("22_cbcgj")
+texture_pressed = ExtResource("23_x7nog")
+action = "ui_cancel"
+visibility_mode = 1

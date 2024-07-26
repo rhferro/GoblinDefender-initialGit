@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtewj77f72kg4"]
+
+[ext_resource type="PackedScene" uid="uid://cpxcf0odl4l0j" path="res://Sceens_test/Pieces_of_world.tscn" id="1_uvbxt"]
+[ext_resource type="PackedScene" uid="uid://dmqc1d4kqcxpi" path="res://objects/Enemy/Old Enemy/warrior-red-enemy.tscn" id="2_wrym1"]
+
+[node name="World_test" type="Node2D"]
+
+[node name="World" parent="." instance=ExtResource("1_uvbxt")]
+modulate = Color(1, 0.984314, 1, 1)
+
+[node name="Enemy" parent="." instance=ExtResource("2_wrym1")]
+position = Vector2(521, 199)

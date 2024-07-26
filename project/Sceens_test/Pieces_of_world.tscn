@@ -1,0 +1,744 @@
+[gd_scene load_steps=72 format=3 uid="uid://cpxcf0odl4l0j"]
+
+[ext_resource type="Texture2D" uid="uid://chk1vts2p27gh" path="res://addons/Tiny Swords (Update 010)/Terrain/Ground/Tilemap_Flat.png" id="1_0oqna"]
+[ext_resource type="Texture2D" uid="uid://0nre6nfdg37p" path="res://addons/Tiny Swords (Update 010)/Terrain/Bridge/Bridge_All.png" id="2_0kdbn"]
+[ext_resource type="Texture2D" uid="uid://b5q6q16vp0h4o" path="res://addons/Tiny Swords (Update 010)/Terrain/Ground/Shadows.png" id="3_d3kk8"]
+[ext_resource type="Texture2D" uid="uid://dv0iipsuf5ndx" path="res://addons/Tiny Swords (Update 010)/Terrain/Ground/Tilemap_Elevation.png" id="4_16ftt"]
+[ext_resource type="Texture2D" uid="uid://jpbme5bm7qu6" path="res://addons/Tiny Swords (Update 010)/Deco/01.png" id="5_8ffsl"]
+[ext_resource type="Texture2D" uid="uid://yvv5s6c7yjg4" path="res://addons/Tiny Swords (Update 010)/Deco/02.png" id="6_xw8ln"]
+[ext_resource type="Texture2D" uid="uid://dkhadtyyni4j0" path="res://addons/Tiny Swords (Update 010)/Deco/03.png" id="7_8cogr"]
+[ext_resource type="Texture2D" uid="uid://c11ppedow8345" path="res://addons/Tiny Swords (Update 010)/Deco/04.png" id="8_xmstn"]
+[ext_resource type="Texture2D" uid="uid://ceb6tsd5y7kew" path="res://addons/Tiny Swords (Update 010)/Deco/05.png" id="9_3c0fe"]
+[ext_resource type="Texture2D" uid="uid://b6a0yaorafexh" path="res://addons/Tiny Swords (Update 010)/Deco/06.png" id="10_pmwf4"]
+[ext_resource type="Texture2D" uid="uid://xut18d6oq1ad" path="res://addons/Tiny Swords (Update 010)/Deco/07.png" id="11_2po7j"]
+[ext_resource type="Texture2D" uid="uid://ckud3b6woqyx4" path="res://addons/Tiny Swords (Update 010)/Deco/08.png" id="12_ddbeu"]
+[ext_resource type="Texture2D" uid="uid://dd6f5hosuew6k" path="res://addons/Tiny Swords (Update 010)/Deco/09.png" id="13_emlpf"]
+[ext_resource type="Texture2D" uid="uid://dd13gdlfxifks" path="res://addons/Tiny Swords (Update 010)/Deco/10.png" id="14_nhi0g"]
+[ext_resource type="Texture2D" uid="uid://86440ke30id0" path="res://addons/Tiny Swords (Update 010)/Deco/11.png" id="15_f8qxj"]
+[ext_resource type="Texture2D" uid="uid://cpnkmsrs6grtb" path="res://addons/Tiny Swords (Update 010)/Deco/12.png" id="16_61nrg"]
+[ext_resource type="Texture2D" uid="uid://cgyk5h8b02jlo" path="res://addons/Tiny Swords (Update 010)/Deco/13.png" id="17_002qx"]
+[ext_resource type="Texture2D" uid="uid://bk8iri2ro0373" path="res://addons/Tiny Swords (Update 010)/Deco/14.png" id="18_er1h0"]
+[ext_resource type="Texture2D" uid="uid://dj1m3lqc2byvr" path="res://addons/Tiny Swords (Update 010)/Deco/15.png" id="19_2pd8h"]
+[ext_resource type="Texture2D" uid="uid://dehmybp1ee4a1" path="res://addons/Tiny Swords (Update 010)/Deco/16.png" id="20_ljj6j"]
+[ext_resource type="Texture2D" uid="uid://dfhfsr3h1el7r" path="res://addons/Tiny Swords (Update 010)/Deco/17.png" id="21_xwucx"]
+[ext_resource type="Texture2D" uid="uid://qyvpehyy7tg" path="res://addons/Tiny Swords (Update 010)/Deco/18.png" id="22_vyjua"]
+[ext_resource type="Texture2D" uid="uid://xfb3ifhchqjb" path="res://addons/Tiny Swords (Update 010)/Resources/Gold Mine/GoldMine_Active.png" id="23_anggw"]
+[ext_resource type="Texture2D" uid="uid://olfpenm2e243" path="res://addons/Tiny Swords (Update 010)/Resources/Gold Mine/GoldMine_Destroyed.png" id="24_wf8gd"]
+[ext_resource type="Texture2D" uid="uid://dffqodongprqm" path="res://addons/Tiny Swords (Update 010)/Resources/Gold Mine/GoldMine_Inactive.png" id="25_muva3"]
+[ext_resource type="Texture2D" uid="uid://c1kme6wvwa2pq" path="res://addons/Tiny Swords (Update 010)/Resources/Resources/G_Idle_(NoShadow).png" id="26_cal83"]
+[ext_resource type="Texture2D" uid="uid://df4sti1k1sjpr" path="res://addons/Tiny Swords (Update 010)/Resources/Resources/M_Idle.png" id="27_xucnw"]
+[ext_resource type="Texture2D" uid="uid://duiqwcy55fghc" path="res://addons/Tiny Swords (Update 010)/Resources/Resources/M_Idle_(NoShadow).png" id="28_xhai7"]
+[ext_resource type="Texture2D" uid="uid://djo3kcofrh0yr" path="res://addons/Tiny Swords (Update 010)/Resources/Resources/W_Idle.png" id="29_7fig8"]
+[ext_resource type="Texture2D" uid="uid://b0i7rw818qx10" path="res://addons/Tiny Swords (Update 010)/Resources/Resources/W_Idle_(NoShadow).png" id="30_whfoe"]
+[ext_resource type="Texture2D" uid="uid://d0gaooyr167g0" path="res://addons/Tiny Swords (Update 010)/Resources/Resources/G_Idle.png" id="31_b648g"]
+[ext_resource type="Texture2D" uid="uid://bk0x32afbojxq" path="res://addons/Tiny Swords (Update 010)/Resources/Resources/G_Spawn.png" id="32_vugdr"]
+[ext_resource type="Texture2D" uid="uid://df3osxo3mj4kn" path="res://addons/Tiny Swords (Update 010)/Resources/Resources/M_Spawn.png" id="33_gxpxx"]
+[ext_resource type="Texture2D" uid="uid://bpytypgo45qvc" path="res://addons/Tiny Swords (Update 010)/Resources/Resources/W_Spawn.png" id="34_hwg31"]
+[ext_resource type="Texture2D" uid="uid://c56k1x7vuwb21" path="res://addons/Tiny Swords (Update 010)/Resources/Trees/Tree.png" id="35_ks0fd"]
+[ext_resource type="Texture2D" uid="uid://bvhiuyfflb1br" path="res://addons/Tiny Swords (Update 010)/Resources/Sheep/HappySheep_Idle.png" id="36_2daks"]
+[ext_resource type="Texture2D" uid="uid://cmeptpxdq501i" path="res://addons/Tiny Swords (Update 010)/Resources/Sheep/HappySheep_Bouncing.png" id="37_3y6ra"]
+[ext_resource type="Texture2D" uid="uid://nrpo6lm2qwcv" path="res://addons/Tiny Swords (Update 010)/Terrain/Water/Rocks/Rocks_01.png" id="38_brs37"]
+[ext_resource type="Texture2D" uid="uid://bwfqri00w1jkt" path="res://addons/Tiny Swords (Update 010)/Terrain/Water/Rocks/Rocks_03.png" id="39_jv8e8"]
+[ext_resource type="Texture2D" uid="uid://dvkknohydwol0" path="res://addons/Tiny Swords (Update 010)/Terrain/Water/Rocks/Rocks_04.png" id="40_a2cyt"]
+[ext_resource type="Texture2D" uid="uid://cq5a43f7jtr6d" path="res://addons/Tiny Swords (Update 010)/Terrain/Water/Rocks/Rocks_02.png" id="41_i8tom"]
+[ext_resource type="Texture2D" uid="uid://ve446xlbnowq" path="res://addons/Tiny Swords (Update 010)/Terrain/Water/Foam/Foam.png" id="42_j2bs5"]
+[ext_resource type="Texture2D" uid="uid://dd878gbl2bggy" path="res://addons/Tiny Swords (Update 010)/Terrain/Water/Water.png" id="43_k8gti"]
+[ext_resource type="Texture2D" uid="uid://dba7ro8syriy" path="res://addons/Tiny Swords (Update 010)/Factions/Knights/Buildings/Castle/Castle_Red.png" id="45_4f0qp"]
+[ext_resource type="PackedScene" uid="uid://bodctekr47m03" path="res://objects/Player/player.tscn" id="45_h3q5c"]
+[ext_resource type="Texture2D" uid="uid://cg4bskqcvyab7" path="res://addons/Tiny Swords (Update 010)/Factions/Knights/Buildings/Castle/Castle_Construction.png" id="46_raltv"]
+[ext_resource type="Texture2D" uid="uid://cxt4qbqp5ir4h" path="res://addons/Tiny Swords (Update 010)/Factions/Knights/Buildings/Castle/Castle_Destroyed.png" id="47_ue2mn"]
+[ext_resource type="Texture2D" uid="uid://kkvvwqphhrp2" path="res://addons/Tiny Swords (Update 010)/Factions/Knights/Buildings/House/House_Red.png" id="48_vgbc3"]
+[ext_resource type="Texture2D" uid="uid://dlqyp26q2pgh0" path="res://addons/Tiny Swords (Update 010)/Factions/Knights/Buildings/House/House_Construction.png" id="49_natix"]
+[ext_resource type="Texture2D" uid="uid://c1ug1beflyk6h" path="res://addons/Tiny Swords (Update 010)/Factions/Knights/Buildings/House/House_Destroyed.png" id="50_jexpv"]
+[ext_resource type="Texture2D" uid="uid://cmkexjkh1t4ya" path="res://addons/Tiny Swords (Update 010)/Factions/Knights/Buildings/Tower/Tower_Construction.png" id="51_j2muf"]
+[ext_resource type="Texture2D" uid="uid://uetjebe4asg4" path="res://addons/Tiny Swords (Update 010)/Factions/Knights/Buildings/Tower/Tower_Destroyed.png" id="52_dytmd"]
+[ext_resource type="Texture2D" uid="uid://dclgl58h2uyvh" path="res://addons/Tiny Swords (Update 010)/Factions/Knights/Buildings/Tower/Tower_Red.png" id="53_fk3wd"]
+
+[sub_resource type="Animation" id="Animation_aoc6l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Animation_resources/gold_spawn:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Animation_resources/wood_spawn:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Animation_resources/meet_spawn:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Animation_resources/HappySheepBouncing:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Animation_resources/HappySheepIdle:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Animation_resources/Tree:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Animation_resources/Tree:frame_coords")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_middh"]
+resource_name = "cutting_tree"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Animation_resources/Tree:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 1), Vector2i(1, 1), Vector2i(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0ddw8"]
+resource_name = "gold_spawn"
+length = 0.7
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Animation_resources/gold_spawn:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+
+[sub_resource type="Animation" id="Animation_roogq"]
+resource_name = "meat_spawn"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Animation_resources/meet_spawn:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+
+[sub_resource type="Animation" id="Animation_bhqbo"]
+resource_name = "sheep_bouncing"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Animation_resources/HappySheepBouncing:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_0kig4"]
+resource_name = "sheep_idle"
+length = 0.7
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Animation_resources/HappySheepIdle:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+
+[sub_resource type="Animation" id="Animation_767dh"]
+resource_name = "wood_cutted"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Animation_resources/Tree:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+
+[sub_resource type="Animation" id="Animation_hltd3"]
+resource_name = "wood_idle"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Animation_resources/Tree:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_ep3bg"]
+resource_name = "wood_spawn"
+length = 0.7
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Animation_resources/wood_spawn:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qvtqg"]
+_data = {
+"RESET": SubResource("Animation_aoc6l"),
+"cutting_tree": SubResource("Animation_middh"),
+"gold_spawn": SubResource("Animation_0ddw8"),
+"meat_spawn": SubResource("Animation_roogq"),
+"sheep_bouncing": SubResource("Animation_bhqbo"),
+"sheep_idle": SubResource("Animation_0kig4"),
+"wood_cutted": SubResource("Animation_767dh"),
+"wood_idle": SubResource("Animation_hltd3"),
+"wood_spawn": SubResource("Animation_ep3bg")
+}
+
+[sub_resource type="Animation" id="Animation_nwdnj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Water/Water Animation/Foam:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Water/Water Animation/Rocks02:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Water/Water Animation/Rocks03:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Water/Water Animation/Rocks01:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Water/Water Animation/Rocks04:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Water/Water Animation/Lava:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_sv3dm"]
+resource_name = "lava"
+length = 0.7
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Water/Water Animation/Lava:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+
+[sub_resource type="Animation" id="Animation_stcb4"]
+resource_name = "rock_1_on_water"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Water/Water Animation/Rocks01:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_6viay"]
+resource_name = "rock_2_on_water"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Water/Water Animation/Rocks02:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_jrc0y"]
+resource_name = "rock_3_on_water"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Water/Water Animation/Rocks03:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_1hrpv"]
+resource_name = "rock_4_on_water"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Water/Water Animation/Rocks04:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_ivsx6"]
+resource_name = "water_touch_land"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Water/Water Animation/Foam:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q768g"]
+_data = {
+"RESET": SubResource("Animation_nwdnj"),
+"lava": SubResource("Animation_sv3dm"),
+"rock_1_on_water": SubResource("Animation_stcb4"),
+"rock_2_on_water": SubResource("Animation_6viay"),
+"rock_3_on_water": SubResource("Animation_jrc0y"),
+"rock_4_on_water": SubResource("Animation_1hrpv"),
+"water_touch_land": SubResource("Animation_ivsx6")
+}
+
+[node name="World" type="Node2D"]
+
+[node name="Land" type="Sprite2D" parent="."]
+
+[node name="TileMap" type="TileMap" parent="Land"]
+format = 2
+
+[node name="TilemapFlat" type="Sprite2D" parent="Land/TileMap"]
+position = Vector2(901, 182)
+texture = ExtResource("1_0oqna")
+
+[node name="BridgeAll" type="Sprite2D" parent="Land/TileMap"]
+position = Vector2(95, 127)
+texture = ExtResource("2_0kdbn")
+
+[node name="Shadows" type="Sprite2D" parent="Land/TileMap"]
+position = Vector2(52, 351)
+texture = ExtResource("3_d3kk8")
+
+[node name="TilemapElevation" type="Sprite2D" parent="Land/TileMap"]
+position = Vector2(339, 271)
+texture = ExtResource("4_16ftt")
+
+[node name="Land Animation" type="AnimationPlayer" parent="Land"]
+root_node = NodePath("../../Water/Water Animation")
+
+[node name="Decoration" type="Sprite2D" parent="."]
+position = Vector2(758, 956)
+
+[node name="Mushroom_S" type="Sprite2D" parent="Decoration"]
+position = Vector2(290, -1206)
+texture = ExtResource("5_8ffsl")
+
+[node name="Mushroom_M" type="Sprite2D" parent="Decoration"]
+position = Vector2(210, -1207)
+texture = ExtResource("6_xw8ln")
+
+[node name="Mushroom_L" type="Sprite2D" parent="Decoration"]
+position = Vector2(116, -1204)
+texture = ExtResource("7_8cogr")
+
+[node name="Rock_S" type="Sprite2D" parent="Decoration"]
+position = Vector2(-1, -1036)
+texture = ExtResource("8_xmstn")
+
+[node name="Rock_M" type="Sprite2D" parent="Decoration"]
+position = Vector2(-88, -1043)
+texture = ExtResource("9_3c0fe")
+
+[node name="Rock_L" type="Sprite2D" parent="Decoration"]
+position = Vector2(-197, -1046)
+texture = ExtResource("10_pmwf4")
+
+[node name="Bush_S" type="Sprite2D" parent="Decoration"]
+position = Vector2(-136, -1200)
+texture = ExtResource("11_2po7j")
+
+[node name="Bush_M" type="Sprite2D" parent="Decoration"]
+position = Vector2(-56, -1204)
+texture = ExtResource("12_ddbeu")
+
+[node name="Bush_L" type="Sprite2D" parent="Decoration"]
+position = Vector2(16, -1197)
+texture = ExtResource("13_emlpf")
+
+[node name="Thicket_S" type="Sprite2D" parent="Decoration"]
+position = Vector2(-296, -1208)
+texture = ExtResource("14_nhi0g")
+
+[node name="Thicket_M" type="Sprite2D" parent="Decoration"]
+position = Vector2(-208, -1209)
+texture = ExtResource("15_f8qxj")
+
+[node name="Pumpkin_M" type="Sprite2D" parent="Decoration"]
+position = Vector2(-424, -1021)
+texture = ExtResource("16_61nrg")
+
+[node name="Pumpkin_L" type="Sprite2D" parent="Decoration"]
+position = Vector2(-531, -1021)
+texture = ExtResource("17_002qx")
+
+[node name="Bone" type="Sprite2D" parent="Decoration"]
+position = Vector2(-568, -1192)
+texture = ExtResource("18_er1h0")
+
+[node name="Bone_buried" type="Sprite2D" parent="Decoration"]
+position = Vector2(-656, -1206)
+texture = ExtResource("19_2pd8h")
+
+[node name="Road_danger" type="Sprite2D" parent="Decoration"]
+position = Vector2(-455, -1209)
+texture = ExtResource("20_ljj6j")
+
+[node name="Road_direction" type="Sprite2D" parent="Decoration"]
+position = Vector2(-650, -1057)
+texture = ExtResource("21_xwucx")
+
+[node name="Scarecrow" type="Sprite2D" parent="Decoration"]
+position = Vector2(-303, -1077)
+texture = ExtResource("22_vyjua")
+
+[node name="Resources" type="Sprite2D" parent="."]
+
+[node name="Static_resources" type="Sprite2D" parent="Resources"]
+
+[node name="GoldMineActive" type="Sprite2D" parent="Resources/Static_resources"]
+position = Vector2(389, 713)
+texture = ExtResource("23_anggw")
+
+[node name="GoldMineDestroyed" type="Sprite2D" parent="Resources/Static_resources"]
+position = Vector2(644, 706)
+texture = ExtResource("24_wf8gd")
+
+[node name="GoldMineInactive" type="Sprite2D" parent="Resources/Static_resources"]
+position = Vector2(858, 693)
+texture = ExtResource("25_muva3")
+
+[node name="GIdle(noShadow)" type="Sprite2D" parent="Resources/Static_resources"]
+position = Vector2(313, 822)
+texture = ExtResource("26_cal83")
+
+[node name="MIdle" type="Sprite2D" parent="Resources/Static_resources"]
+position = Vector2(379, 1034)
+texture = ExtResource("27_xucnw")
+
+[node name="MIdle(noShadow)" type="Sprite2D" parent="Resources/Static_resources"]
+position = Vector2(626, 1038)
+texture = ExtResource("28_xhai7")
+
+[node name="WIdle" type="Sprite2D" parent="Resources/Static_resources"]
+position = Vector2(675, 924)
+texture = ExtResource("29_7fig8")
+
+[node name="WIdle(noShadow)" type="Sprite2D" parent="Resources/Static_resources"]
+position = Vector2(389, 939)
+texture = ExtResource("30_whfoe")
+
+[node name="GIdle" type="Sprite2D" parent="Resources/Static_resources"]
+position = Vector2(382, 824)
+texture = ExtResource("31_b648g")
+
+[node name="Animation_resources" type="AnimationPlayer" parent="Resources"]
+libraries = {
+"": SubResource("AnimationLibrary_qvtqg")
+}
+
+[node name="gold_spawn" type="Sprite2D" parent="Resources/Animation_resources"]
+position = Vector2(531, 828)
+texture = ExtResource("32_vugdr")
+hframes = 7
+
+[node name="meet_spawn" type="Sprite2D" parent="Resources/Animation_resources"]
+position = Vector2(516, 1035)
+texture = ExtResource("33_gxpxx")
+hframes = 7
+
+[node name="wood_spawn" type="Sprite2D" parent="Resources/Animation_resources"]
+position = Vector2(530, 945)
+texture = ExtResource("34_hwg31")
+hframes = 7
+
+[node name="Tree" type="Sprite2D" parent="Resources/Animation_resources"]
+position = Vector2(792, 919)
+texture = ExtResource("35_ks0fd")
+hframes = 4
+vframes = 3
+frame = 4
+
+[node name="HappySheepIdle" type="Sprite2D" parent="Resources/Animation_resources"]
+position = Vector2(885, 1072)
+texture = ExtResource("36_2daks")
+hframes = 8
+
+[node name="HappySheepBouncing" type="Sprite2D" parent="Resources/Animation_resources"]
+position = Vector2(761, 1066)
+texture = ExtResource("37_3y6ra")
+hframes = 6
+
+[node name="Water" type="Sprite2D" parent="."]
+
+[node name="Water Animation" type="AnimationPlayer" parent="Water"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_q768g")
+}
+autoplay = "lava"
+
+[node name="Rocks01" type="Sprite2D" parent="Water/Water Animation"]
+position = Vector2(89, 693)
+texture = ExtResource("38_brs37")
+hframes = 8
+
+[node name="Rocks03" type="Sprite2D" parent="Water/Water Animation"]
+position = Vector2(88, 863)
+texture = ExtResource("39_jv8e8")
+hframes = 8
+
+[node name="Rocks04" type="Sprite2D" parent="Water/Water Animation"]
+position = Vector2(90, 961)
+texture = ExtResource("40_a2cyt")
+hframes = 8
+
+[node name="Rocks02" type="Sprite2D" parent="Water/Water Animation"]
+position = Vector2(86, 775)
+texture = ExtResource("41_i8tom")
+hframes = 8
+
+[node name="Foam" type="Sprite2D" parent="Water/Water Animation"]
+position = Vector2(97, 603)
+texture = ExtResource("42_j2bs5")
+hframes = 8
+
+[node name="Lava" type="Sprite2D" parent="Water/Water Animation"]
+self_modulate = Color(1, 0, 0, 1)
+position = Vector2(-68, 603)
+texture = ExtResource("42_j2bs5")
+hframes = 8
+
+[node name="Water_static" type="Sprite2D" parent="Water"]
+
+[node name="Water" type="Sprite2D" parent="Water/Water_static"]
+position = Vector2(51, 493)
+texture = ExtResource("43_k8gti")
+
+[node name="Water2" type="Sprite2D" parent="Water/Water_static"]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(-67, 495)
+texture = ExtResource("43_k8gti")
+
+[node name="Node2D" parent="." instance=ExtResource("45_h3q5c")]
+position = Vector2(265, 166)
+
+[node name="CastleRed" type="Sprite2D" parent="."]
+position = Vector2(-441, 128)
+texture = ExtResource("45_4f0qp")
+
+[node name="CastleConstruction" type="Sprite2D" parent="."]
+position = Vector2(-447, 313)
+texture = ExtResource("46_raltv")
+
+[node name="CastleDestroyed" type="Sprite2D" parent="."]
+position = Vector2(-456, 466)
+texture = ExtResource("47_ue2mn")
+
+[node name="HouseRed" type="Sprite2D" parent="."]
+position = Vector2(-793, 140)
+texture = ExtResource("48_vgbc3")
+
+[node name="HouseConstruction" type="Sprite2D" parent="."]
+position = Vector2(-793, 334)
+texture = ExtResource("49_natix")
+
+[node name="HouseDestroyed" type="Sprite2D" parent="."]
+position = Vector2(-787, 505)
+texture = ExtResource("50_jexpv")
+
+[node name="TowerConstruction" type="Sprite2D" parent="."]
+position = Vector2(-1026, 309)
+texture = ExtResource("51_j2muf")
+
+[node name="TowerDestroyed" type="Sprite2D" parent="."]
+position = Vector2(-1028, 483)
+texture = ExtResource("52_dytmd")
+
+[node name="TowerRed" type="Sprite2D" parent="."]
+position = Vector2(-1026, 116)
+texture = ExtResource("53_fk3wd")

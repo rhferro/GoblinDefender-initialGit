@@ -1,0 +1,71 @@
+[gd_scene load_steps=11 format=3 uid="uid://jmf0ig8pwexs"]
+
+[ext_resource type="Texture2D" uid="uid://ve446xlbnowq" path="res://addons/Tiny Swords (Update 010)/Terrain/Water/Foam/Foam.png" id="1_abxys"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_psr1p"]
+atlas = ExtResource("1_abxys")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8f417"]
+atlas = ExtResource("1_abxys")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mll3o"]
+atlas = ExtResource("1_abxys")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2jc7w"]
+atlas = ExtResource("1_abxys")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0dcc"]
+atlas = ExtResource("1_abxys")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_edf5a"]
+atlas = ExtResource("1_abxys")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o8sjc"]
+atlas = ExtResource("1_abxys")
+region = Rect2(1152, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_osonm"]
+atlas = ExtResource("1_abxys")
+region = Rect2(1344, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_20sre"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_psr1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8f417")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mll3o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2jc7w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0dcc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_edf5a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o8sjc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_osonm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="waterFoam" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_20sre")
+frame_progress = 0.526496

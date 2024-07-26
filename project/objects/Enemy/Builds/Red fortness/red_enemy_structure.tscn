@@ -1,0 +1,127 @@
+[gd_scene load_steps=15 format=3 uid="uid://bhniragmcugu1"]
+
+[ext_resource type="Script" path="res://scripts/EnemiesScript/Structure_enemy_class.gd" id="1_q25xy"]
+[ext_resource type="PackedScene" uid="uid://dl02ua751e8ci" path="res://objects/Enemy/Red_knight.tscn" id="2_t4fn5"]
+[ext_resource type="PackedScene" uid="uid://dysuxi0tkmy1u" path="res://objects/Enemy/Builds/Red fortness/castle_destroyed.tscn" id="3_kwcas"]
+[ext_resource type="PackedScene" uid="uid://cs2lvqsa530x2" path="res://objects/Enemy/Red_Archer.tscn" id="3_upoh5"]
+[ext_resource type="Texture2D" uid="uid://dba7ro8syriy" path="res://addons/Tiny Swords (Update 010)/Factions/Knights/Buildings/Castle/Castle_Red.png" id="4_85o0k"]
+[ext_resource type="PackedScene" uid="uid://bqsh2wde2hlly" path="res://objects/miscellaneous/Effects/RedCastleDamage/red_castle_damage_1.tscn" id="4_y36ym"]
+[ext_resource type="PackedScene" uid="uid://b0ngotjjnggs3" path="res://objects/miscellaneous/Effects/RedCastleDamage/red_castle_damage_2.tscn" id="5_h7srd"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kqjef"]
+radius = 77.0087
+height = 379.996
+
+[sub_resource type="Curve2D" id="Curve2D_q6c6l"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -205, 50, 0, 0, 0, 0, -142, -28, 0, 0, 0, 0, -2, -32, 0, 0, 0, 0, 133, -36, 0, 0, 0, 0, 194, 56, 0, 0, 0, 0, 133, 160, 0, 0, 0, 0, -130, 156, 0, 0, 0, 0, -205, 51)
+}
+point_count = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_difqo"]
+bg_color = Color(0.15967, 0.15967, 0.15967, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kfuu3"]
+bg_color = Color(0.847059, 0.160784, 0.160784, 1)
+
+[sub_resource type="Animation" id="Animation_7jsah"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ddklw"]
+resource_name = "get_damage"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(0.297302, 0.11663, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 0.975), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o5qhl"]
+_data = {
+"RESET": SubResource("Animation_7jsah"),
+"get_damage": SubResource("Animation_ddklw")
+}
+
+[node name="RedCastle" type="CharacterBody2D" groups=["enemyStructure"]]
+y_sort_enabled = true
+position = Vector2(-1, -101)
+collision_layer = 4
+collision_mask = 5
+script = ExtResource("1_q25xy")
+creatures = Array[PackedScene]([ExtResource("2_t4fn5"), ExtResource("3_upoh5")])
+destroyed_structure_packed_sceen = ExtResource("3_kwcas")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+texture = ExtResource("4_85o0k")
+
+[node name="RedCastleDamage1" parent="." instance=ExtResource("4_y36ym")]
+unique_name_in_owner = true
+visible = false
+position = Vector2(1, 101)
+
+[node name="RedCastleDamage2" parent="." instance=ExtResource("5_h7srd")]
+unique_name_in_owner = true
+visible = false
+position = Vector2(0, 100)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, 67)
+rotation = 1.57257
+shape = SubResource("CapsuleShape2D_kqjef")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Path2D" type="Path2D" parent="Node2D"]
+position = Vector2(1.45866, 15.1633)
+scale = Vector2(0.992481, 0.69898)
+curve = SubResource("Curve2D_q6c6l")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Node2D/Path2D"]
+unique_name_in_owner = true
+position = Vector2(-205, 50)
+rotation = -0.891382
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-3, 67)
+rotation = 1.57257
+shape = SubResource("CapsuleShape2D_kqjef")
+
+[node name="StructureBar" type="ProgressBar" parent="."]
+offset_left = -135.0
+offset_top = 123.0
+offset_right = -95.0
+offset_bottom = 139.0
+scale = Vector2(6.78996, 1)
+theme_override_styles/background = SubResource("StyleBoxFlat_difqo")
+theme_override_styles/fill = SubResource("StyleBoxFlat_kfuu3")
+rounded = true
+show_percentage = false
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_o5qhl")
+}
+autoplay = "get_damage"

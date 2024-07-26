@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhewc1boshxot"]
+
+[ext_resource type="PackedScene" uid="uid://bgo4chxsppmqh" path="res://UI/game_ui.tscn" id="1_5ttby"]
+[ext_resource type="PackedScene" uid="uid://bodctekr47m03" path="res://objects/Player/player.tscn" id="7_iyynj"]
+[ext_resource type="PackedScene" uid="uid://dmqc1d4kqcxpi" path="res://objects/Enemy/Old Enemy/warrior-red-enemy.tscn" id="8_8a5ax"]
+
+[node name="TesteUi" type="Node2D"]
+
+[node name="GameUI" parent="." instance=ExtResource("1_5ttby")]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("7_iyynj")]
+position = Vector2(616, 384)
+
+[node name="CharacterBody2D2" parent="." instance=ExtResource("8_8a5ax")]
+position = Vector2(1043, 473)

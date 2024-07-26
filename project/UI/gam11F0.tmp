@@ -1,0 +1,503 @@
+[gd_scene load_steps=25 format=3 uid="uid://bgo4chxsppmqh"]
+
+[ext_resource type="Script" path="res://Sceens_test/GameUI.gd" id="1_wnlef"]
+[ext_resource type="Texture2D" uid="uid://byvfloy7bqf8e" path="res://addons/Tiny Swords (Update 010)/UI/Banners/Banner_Horizontal.png" id="2_3fy6c"]
+[ext_resource type="Texture2D" uid="uid://c1kme6wvwa2pq" path="res://addons/Tiny Swords (Update 010)/Resources/Resources/G_Idle_(NoShadow).png" id="3_ik16k"]
+[ext_resource type="Texture2D" uid="uid://hajovv20dhje" path="res://addons/Tiny Swords (Update 010)/UI/Buttons/Button_Blue_9Slides_Pressed.png" id="4_bd1a5"]
+[ext_resource type="Texture2D" uid="uid://7m8k11bt8ohd" path="res://addons/Tiny Swords (Update 010)/UI/Buttons/Button_Hover.png" id="5_qomah"]
+[ext_resource type="Texture2D" uid="uid://djdbnpv67eqq6" path="res://addons/Tiny Swords (Update 010)/UI/Icons/Regular_08.png" id="6_p3q27"]
+[ext_resource type="Texture2D" uid="uid://bi2itx42if8ad" path="res://addons/Tiny Swords (Update 010)/UI/buttons_Control/attack-btn.png" id="15_c5xem"]
+[ext_resource type="Texture2D" uid="uid://bghknktofus45" path="res://addons/Tiny Swords (Update 010)/UI/buttons_Control/attack_btn_pressed.png" id="16_k768h"]
+[ext_resource type="Texture2D" uid="uid://ctprlhki8uor" path="res://addons/Tiny Swords (Update 010)/UI/buttons_Control/dash-btn.png" id="17_q1856"]
+[ext_resource type="Texture2D" uid="uid://x5dph7oymltp" path="res://addons/Tiny Swords (Update 010)/UI/buttons_Control/dash_btn_pressed.png" id="18_f0fdg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uoa5i"]
+atlas = ExtResource("5_qomah")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vld21"]
+atlas = ExtResource("6_p3q27")
+region = Rect2(16, 8, 32, 40)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jffw7"]
+texture = ExtResource("4_bd1a5")
+texture_margin_left = 24.0
+texture_margin_top = 24.0
+texture_margin_right = 24.0
+texture_margin_bottom = 32.0
+axis_stretch_horizontal = 2
+region_rect = Rect2(0, 0, 192, 192)
+
+[sub_resource type="SystemFont" id="SystemFont_mk0e6"]
+font_names = PackedStringArray("Impact")
+font_weight = 375
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_ipg1x"]
+font = SubResource("SystemFont_mk0e6")
+font_size = 33
+font_color = Color(0.0859838, 0.0859838, 0.0859838, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_l48l3"]
+font_names = PackedStringArray("Impact")
+font_weight = 350
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_ayt6w"]
+font = SubResource("SystemFont_l48l3")
+font_size = 21
+font_color = Color(0.0859838, 0.0859838, 0.0859838, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jp8l6"]
+bg_color = Color(0.15967, 0.15967, 0.15967, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xyrnf"]
+bg_color = Color(0.847059, 0.160784, 0.160784, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h113g"]
+bg_color = Color(0.15967, 0.15967, 0.15967, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vt14u"]
+bg_color = Color(0.0745098, 0.560784, 0.972549, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_731p5"]
+texture = ExtResource("2_3fy6c")
+texture_margin_left = 32.0
+texture_margin_top = 16.0
+texture_margin_right = 32.0
+texture_margin_bottom = 40.0
+axis_stretch_horizontal = 2
+region_rect = Rect2(32, 48, 128, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2gpg"]
+atlas = ExtResource("3_ik16k")
+region = Rect2(40, 40, 56, 56)
+
+[sub_resource type="GDScript" id="GDScript_6tqqv"]
+script/source = "class_name VirtualJoystick
+
+extends Control
+
+## A simple virtual joystick for touchscreens, with useful options.
+## Github: https://github.com/MarcoFazioRandom/Virtual-Joystick-Godot
+
+# EXPORTED VARIABLE
+
+## The color of the button when the joystick is pressed.
+@export var pressed_color := Color.GRAY
+
+## If the input is inside this range, the output is zero.
+@export_range(0, 200, 1) var deadzone_size : float = 10
+
+## The max distance the tip can reach.
+@export_range(0, 500, 1) var clampzone_size : float = 75
+
+enum Joystick_mode {
+	FIXED, ## The joystick doesn't move.
+	DYNAMIC, ## Every time the joystick area is pressed, the joystick position is set on the touched position.
+	FOLLOWING ## When the finger moves outside the joystick area, the joystick will follow it.
+}
+
+## If the joystick stays in the same position or appears on the touched position when touch is started
+@export var joystick_mode := Joystick_mode.FIXED
+
+enum Visibility_mode {
+	ALWAYS, ## Always visible
+	TOUCHSCREEN_ONLY, ## Visible on touch screens only
+	WHEN_TOUCHED ## Visible only when touched
+}
+
+## If the joystick is always visible, or is shown only if there is a touchscreen
+@export var visibility_mode := Visibility_mode.ALWAYS
+
+## If true, the joystick uses Input Actions (Project -> Project Settings -> Input Map)
+@export var use_input_actions := true
+
+@export var action_left := \"ui_left\"
+@export var action_right := \"ui_right\"
+@export var action_up := \"ui_up\"
+@export var action_down := \"ui_down\"
+
+# PUBLIC VARIABLES
+
+## If the joystick is receiving inputs.
+var is_pressed := false
+
+# The joystick output.
+var output := Vector2.ZERO
+
+# PRIVATE VARIABLES
+
+var _touch_index : int = -1
+
+@onready var _base := $Base
+@onready var _tip := $Base/Tip
+
+@onready var _base_default_position : Vector2 = _base.position
+@onready var _tip_default_position : Vector2 = _tip.position
+
+@onready var _default_color : Color = _tip.modulate
+
+# FUNCTIONS
+
+func _ready() -> void:
+	if ProjectSettings.get_setting(\"input_devices/pointing/emulate_mouse_from_touch\"):
+		printerr(\"The Project Setting 'emulate_mouse_from_touch' should be set to False\")
+	if not ProjectSettings.get_setting(\"input_devices/pointing/emulate_touch_from_mouse\"):
+		printerr(\"The Project Setting 'emulate_touch_from_mouse' should be set to True\")
+	
+	if not DisplayServer.is_touchscreen_available() and visibility_mode == Visibility_mode.TOUCHSCREEN_ONLY :
+		hide()
+	
+	if visibility_mode == Visibility_mode.WHEN_TOUCHED:
+		hide()
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventScreenTouch:
+		if event.pressed:
+			if _is_point_inside_joystick_area(event.position) and _touch_index == -1:
+				if joystick_mode == Joystick_mode.DYNAMIC or joystick_mode == Joystick_mode.FOLLOWING or (joystick_mode == Joystick_mode.FIXED and _is_point_inside_base(event.position)):
+					if joystick_mode == Joystick_mode.DYNAMIC or joystick_mode == Joystick_mode.FOLLOWING:
+						_move_base(event.position)
+					if visibility_mode == Visibility_mode.WHEN_TOUCHED:
+						show()
+					_touch_index = event.index
+					_tip.modulate = pressed_color
+					_update_joystick(event.position)
+					get_viewport().set_input_as_handled()
+		elif event.index == _touch_index:
+			_reset()
+			if visibility_mode == Visibility_mode.WHEN_TOUCHED:
+				hide()
+			get_viewport().set_input_as_handled()
+	elif event is InputEventScreenDrag:
+		if event.index == _touch_index:
+			_update_joystick(event.position)
+			get_viewport().set_input_as_handled()
+
+func _move_base(new_position: Vector2) -> void:
+	_base.global_position = new_position - _base.pivot_offset * get_global_transform_with_canvas().get_scale()
+
+func _move_tip(new_position: Vector2) -> void:
+	_tip.global_position = new_position - _tip.pivot_offset * _base.get_global_transform_with_canvas().get_scale()
+
+func _is_point_inside_joystick_area(point: Vector2) -> bool:
+	var x: bool = point.x >= global_position.x and point.x <= global_position.x + (size.x * get_global_transform_with_canvas().get_scale().x)
+	var y: bool = point.y >= global_position.y and point.y <= global_position.y + (size.y * get_global_transform_with_canvas().get_scale().y)
+	return x and y
+
+func _get_base_radius() -> Vector2:
+	return _base.size * _base.get_global_transform_with_canvas().get_scale() / 2
+
+func _is_point_inside_base(point: Vector2) -> bool:
+	var _base_radius = _get_base_radius()
+	var center : Vector2 = _base.global_position + _base_radius
+	var vector : Vector2 = point - center
+	if vector.length_squared() <= _base_radius.x * _base_radius.x:
+		return true
+	else:
+		return false
+
+func _update_joystick(touch_position: Vector2) -> void:
+	var _base_radius = _get_base_radius()
+	var center : Vector2 = _base.global_position + _base_radius
+	var vector : Vector2 = touch_position - center
+	vector = vector.limit_length(clampzone_size)
+	
+	if joystick_mode == Joystick_mode.FOLLOWING and touch_position.distance_to(center) > clampzone_size:
+		_move_base(touch_position - vector)
+	
+	_move_tip(center + vector)
+	
+	if vector.length_squared() > deadzone_size * deadzone_size:
+		is_pressed = true
+		output = (vector - (vector.normalized() * deadzone_size)) / (clampzone_size - deadzone_size)
+	else:
+		is_pressed = false
+		output = Vector2.ZERO
+	
+	if use_input_actions:
+		if output.x > 0:
+			Input.action_release(action_left)
+			Input.action_press(action_right, output.x)
+		else:
+			Input.action_release(action_right)
+			Input.action_press(action_left, -output.x)
+
+		if output.y > 0:
+			Input.action_release(action_up)
+			Input.action_press(action_down, output.y)
+		else:
+			Input.action_release(action_down)
+			Input.action_press(action_up, -output.y)
+
+func _reset():
+	is_pressed = false
+	output = Vector2.ZERO
+	_touch_index = -1
+	_tip.modulate = _default_color
+	_base.position = _base_default_position
+	_tip.position = _tip_default_position
+	if use_input_actions:
+		for action in [action_left, action_right, action_down, action_up]:
+			Input.action_release(action)
+"
+
+[node name="GameUI" type="CanvasLayer"]
+script = ExtResource("1_wnlef")
+
+[node name="Upgrade2" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.00784314)
+offset_left = 24.0
+offset_top = 205.0
+offset_right = 123.0
+offset_bottom = 298.0
+texture = SubResource("AtlasTexture_uoa5i")
+
+[node name="TextureRect" type="TextureRect" parent="Upgrade2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.425
+anchor_right = 0.5
+anchor_bottom = 0.425
+offset_left = -20.5
+offset_top = -23.525
+offset_right = 20.5
+offset_bottom = 23.475
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_vld21")
+
+[node name="PlayerInfo" type="Panel" parent="."]
+offset_left = 26.0
+offset_top = 26.0
+offset_right = 319.0
+offset_bottom = 191.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_jffw7")
+
+[node name="Name" type="Label" parent="PlayerInfo"]
+layout_mode = 1
+offset_left = 27.0
+offset_top = 25.0
+offset_right = 134.0
+offset_bottom = 71.0
+text = "Gorn"
+label_settings = SubResource("LabelSettings_ipg1x")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelLabel" type="Label" parent="PlayerInfo"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 175.0
+offset_top = -46.5
+offset_right = 236.0
+offset_bottom = -19.5
+grow_vertical = 2
+text = "Level: "
+label_settings = SubResource("LabelSettings_ayt6w")
+
+[node name="Level" type="Label" parent="PlayerInfo"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 230.0
+offset_top = -46.5
+offset_right = 291.0
+offset_bottom = -19.5
+grow_vertical = 2
+text = "1"
+label_settings = SubResource("LabelSettings_ayt6w")
+
+[node name="HP" type="Label" parent="PlayerInfo"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 49.0
+offset_top = -90.0
+offset_right = 110.0
+offset_bottom = -63.0
+grow_vertical = 0
+text = "HP:"
+label_settings = SubResource("LabelSettings_ayt6w")
+
+[node name="UIHPBar" type="ProgressBar" parent="PlayerInfo/HP"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 40.0
+offset_top = 1.0
+offset_right = 220.0
+offset_bottom = 28.0
+theme_override_styles/background = SubResource("StyleBoxFlat_jp8l6")
+theme_override_styles/fill = SubResource("StyleBoxFlat_xyrnf")
+value = 91.0
+rounded = true
+show_percentage = false
+
+[node name="UIHPValue" type="Label" parent="PlayerInfo/HP/UIHPBar"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "95/100"
+
+[node name="MP" type="Label" parent="PlayerInfo"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 46.0
+offset_top = -57.0
+offset_right = 107.0
+offset_bottom = -30.0
+grow_vertical = 0
+text = "MP:"
+label_settings = SubResource("LabelSettings_ayt6w")
+
+[node name="UIMPBar" type="ProgressBar" parent="PlayerInfo/MP"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 43.0
+offset_top = 1.0
+offset_right = 222.0
+offset_bottom = 28.0
+theme_override_styles/background = SubResource("StyleBoxFlat_h113g")
+theme_override_styles/fill = SubResource("StyleBoxFlat_vt14u")
+value = 91.0
+rounded = true
+show_percentage = false
+
+[node name="UIMPValue" type="Label" parent="PlayerInfo/MP/UIMPBar"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "45/50
+"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Upgrade" type="TextureRect" parent="."]
+offset_left = 24.0
+offset_top = 205.0
+offset_right = 123.0
+offset_bottom = 298.0
+texture = SubResource("AtlasTexture_uoa5i")
+
+[node name="TextureRect" type="TextureRect" parent="Upgrade"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.425
+anchor_right = 0.5
+anchor_bottom = 0.425
+offset_left = -20.5
+offset_top = -23.525
+offset_right = 20.5
+offset_bottom = 23.475
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_vld21")
+
+[node name="Resources" type="Panel" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -259.0
+offset_top = 21.0
+offset_right = -20.0
+offset_bottom = 144.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_731p5")
+
+[node name="GoldLabel" type="Label" parent="Resources"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -130.0
+offset_top = 23.0
+offset_right = -22.0
+offset_bottom = 84.0
+grow_horizontal = 0
+text = "9999999"
+label_settings = SubResource("LabelSettings_ipg1x")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GoldSymbol" type="Label" parent="Resources"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -178.0
+offset_top = 22.0
+offset_right = -138.0
+offset_bottom = 83.0
+grow_horizontal = 0
+text = "$"
+label_settings = SubResource("LabelSettings_ipg1x")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GoldRect" type="TextureRect" parent="Resources"]
+layout_mode = 1
+offset_left = 18.0
+offset_top = 22.0
+offset_right = 74.0
+offset_bottom = 78.0
+texture = SubResource("AtlasTexture_f2gpg")
+
+[node name="Controls" type="CanvasLayer" parent="."]
+
+[node name="Attack" type="TouchScreenButton" parent="Controls"]
+position = Vector2(822, 382)
+scale = Vector2(3.09992, 3.09992)
+texture_normal = ExtResource("15_c5xem")
+texture_pressed = ExtResource("16_k768h")
+
+[node name="Dash" type="TouchScreenButton" parent="Controls"]
+position = Vector2(940, 188.286)
+scale = Vector2(1.85938, 2.01116)
+texture_normal = ExtResource("17_q1856")
+texture_pressed = ExtResource("18_f0fdg")
+
+[node name="VirtualJoystick" type="Control" parent="Controls"]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+script = SubResource("GDScript_6tqqv")
+pressed_color = Color(0.669315, 0.669315, 0.669315, 1)

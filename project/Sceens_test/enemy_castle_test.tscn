@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://m0rgebvqmgy"]
+
+[ext_resource type="PackedScene" uid="uid://cvlrfc2hr1ns4" path="res://objects/Enemy/Builds/Red fortness/Castle Red Spawner.tscn" id="2_gv2i7"]
+[ext_resource type="Script" path="res://scripts/EnemiesScript/Structure_enemy_class.gd" id="2_jiuhe"]
+
+[node name="Node2D" type="Node2D" groups=["enemyStructure"]]
+script = ExtResource("2_jiuhe")
+
+[node name="CastleRedSpawner" parent="." instance=ExtResource("2_gv2i7")]

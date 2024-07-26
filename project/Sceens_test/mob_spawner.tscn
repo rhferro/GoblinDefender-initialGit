@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://boy1t7ugn6k50"]
+
+[ext_resource type="PackedScene" uid="uid://bodctekr47m03" path="res://objects/Player/player.tscn" id="2_h3hmq"]
+[ext_resource type="PackedScene" uid="uid://bhniragmcugu1" path="res://objects/Enemy/Builds/Red fortness/red_enemy_structure.tscn" id="2_yy4fp"]
+
+[node name="MobSpawner" type="Node2D"]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_h3hmq")]
+position = Vector2(941, 429)
+
+[node name="Node2D" parent="." instance=ExtResource("2_yy4fp")]
+position = Vector2(283, 283)

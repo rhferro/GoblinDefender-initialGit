@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://ct12n3v1oswnb"]
+
+[ext_resource type="PackedScene" uid="uid://bodctekr47m03" path="res://objects/Player/player.tscn" id="1_oua03"]
+[ext_resource type="PackedScene" uid="uid://dmqc1d4kqcxpi" path="res://objects/Enemy/warrior-red-enemy.tscn" id="2_43e5q"]
+
+[node name="TestFollow" type="Node2D"]
+
+[node name="CharacterBody2D2" parent="." instance=ExtResource("1_oua03")]
+position = Vector2(473, 243)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_43e5q")]
+position = Vector2(961, 105)
+
+[node name="CharacterBody2D3" parent="." instance=ExtResource("2_43e5q")]
+position = Vector2(967, 284)
+
+[node name="CharacterBody2D4" parent="." instance=ExtResource("2_43e5q")]
+position = Vector2(935, 433)

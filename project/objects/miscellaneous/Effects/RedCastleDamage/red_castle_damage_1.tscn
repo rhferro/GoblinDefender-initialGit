@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqsh2wde2hlly"]
+
+[ext_resource type="PackedScene" uid="uid://f7ygtgu1fvb3" path="res://objects/miscellaneous/Effects/fire_animation.tscn" id="1_8pb3d"]
+[ext_resource type="Texture2D" uid="uid://dba7ro8syriy" path="res://addons/Tiny Swords (Update 010)/Factions/Knights/Buildings/Castle/Castle_Red.png" id="2_hu8ab"]
+
+[node name="RedCastle Damage 1" type="Node2D"]
+
+[node name="FireAnimation3" parent="." instance=ExtResource("1_8pb3d")]
+position = Vector2(133.5, -61.5)
+scale = Vector2(0.445312, 0.445313)
+
+[node name="CastleRed" type="Sprite2D" parent="."]
+position = Vector2(-1, -101)
+texture = ExtResource("2_hu8ab")
+
+[node name="FireAnimation" parent="." instance=ExtResource("1_8pb3d")]
+position = Vector2(-92, -50)
+scale = Vector2(0.46875, 0.5625)
+
+[node name="FireAnimation2" parent="." instance=ExtResource("1_8pb3d")]
+position = Vector2(55.75, -142.438)
+scale = Vector2(0.613281, 0.649414)

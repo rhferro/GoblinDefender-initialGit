@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://gaocs02e0hjb"]
+
+[ext_resource type="PackedScene" uid="uid://bodctekr47m03" path="res://objects/Player/player.tscn" id="1_6atsw"]
+[ext_resource type="PackedScene" uid="uid://cw1j3s2i4yiop" path="res://objects/Enemy/new-try-follow-warrior-red-enemy.tscn" id="2_jv3bf"]
+[ext_resource type="PackedScene" uid="uid://bw8a8qi6k3ky0" path="res://objects/miscellaneous/death.tscn" id="3_fvnk8"]
+[ext_resource type="PackedScene" uid="uid://dxay8p4nf4ikc" path="res://UI/tile_map.tscn" id="4_ku1m3"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_7p7oq"]
+vertices = PackedVector2Array(873, 701, -47, 749, 33, 40, 1196, -163)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(24, 32, 1212, -177, 880, 711, -59, 760)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_6atsw")]
+position = Vector2(815, 162)
+
+[node name="Enemy" parent="." instance=ExtResource("2_jv3bf")]
+position = Vector2(108, 730)
+death_object_scene = ExtResource("3_fvnk8")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+position = Vector2(20, 103)
+navigation_polygon = SubResource("NavigationPolygon_7p7oq")
+
+[node name="TileMap" parent="NavigationRegion2D" instance=ExtResource("4_ku1m3")]
+position = Vector2(448, 30)
+layer_0/tile_data = PackedInt32Array()
+layer_1/enabled = false
+layer_1/z_index = -1
+layer_2/tile_data = PackedInt32Array(196605, 1, 3, 131069, 1, 3, 262142, 1, 3, 196606, 1, 3, 327680, 1, 3, 262144, 1, 3, 327679, 1, 3, 262143, 1, 3)
+layer_4/enabled = false
